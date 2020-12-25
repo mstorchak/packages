@@ -1,0 +1,8 @@
+TIMEVALIDFILE="/var/state/acme-bootstrap"
+
+[ "$ACTION" = "stratum" ] || exit 0
+
+[ -f "$TIMEVALIDFILE" ] || {
+	echo "ntpd says time is valid" >$TIMEVALIDFILE
+	/etc/init.d/acme enabled && /etc/init.d/acme start
+}

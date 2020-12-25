@@ -54,6 +54,8 @@ define Package/acme/install
 	$(INSTALL_BIN) ./files/acme.init $(1)/etc/init.d/acme
 	$(INSTALL_DIR) $(1)/usr/lib/acme
 	$(INSTALL_BIN) ./files/run.sh $(1)/usr/lib/acme/run-acme
+	$(INSTALL_DIR) $(1)/etc/hotplug.d/ntp/
+	$(INSTALL_DATA) ./files/acme.bootstrap $(1)/etc/hotplug.d/ntp/30-acme-bootstrap
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/acme.sh $(1)/usr/lib/acme/acme.sh
 endef
 
