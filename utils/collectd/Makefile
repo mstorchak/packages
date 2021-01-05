@@ -104,7 +104,6 @@ COLLECTD_PLUGINS_DISABLED:= \
 	smart \
 	snmp_agent \
 	statsd \
-	swap \
 	synproxy \
 	sysevent \
 	tape \
@@ -185,6 +184,7 @@ COLLECTD_PLUGINS_SELECTED:= \
 	rrdtool \
 	sensors \
 	snmp \
+	swap \
 	syslog \
 	table \
 	tail \
@@ -450,6 +450,7 @@ $(eval $(call BuildPlugin,routeros,MikroTik RouterOS input,routeros,+PACKAGE_col
 $(eval $(call BuildPlugin,rrdtool,RRDtool output,rrdtool,+PACKAGE_collectd-mod-rrdtool:librrd1))
 $(eval $(call BuildPlugin,sensors,lm_sensors input,sensors,+PACKAGE_collectd-mod-sensors:libsensors))
 $(eval $(call BuildPlugin,snmp,SNMP input,snmp,+PACKAGE_collectd-mod-snmp:libnetsnmp))
+$(eval $(call BuildPlugin,swap,swap input,swap,))
 $(eval $(call BuildPlugin,syslog,syslog output,syslog,))
 $(eval $(call BuildPlugin,tail,tail input,tail,))
 $(eval $(call BuildPlugin,tail-csv,tail CSV input,tail_csv,))
